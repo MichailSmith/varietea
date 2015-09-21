@@ -18,7 +18,7 @@ class ContactPage {
       <div className="ContactPage">
         <div className="ContactPage-container">
           <h1>{title}</h1>
-          <p>...</p>
+          <p>contact</p>
         </div>
       </div>
     );
