@@ -17,6 +17,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 // Register API middleware
 // -----------------------------------------------------------------------------
 server.use('/api/content', require('./api/content'));
+server.use('/api/tea', require('./api/tea'));
 
 //
 // Register server-side rendering middleware

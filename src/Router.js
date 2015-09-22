@@ -8,6 +8,7 @@ import ContentPage from './components/ContentPage';
 import ContactPage from './components/ContactPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
+import Tea from './components/Tea';
 
 const router = new Router(on => {
 
@@ -20,7 +21,7 @@ const router = new Router(on => {
 
   on('/tea/:id', async (req) =>{
     const data = await http.get(`/api/tea/${req.params.id}`);
-    return data && <ContentPage {...data} />;
+    return data && <Tea {...data} />;
   });
 
   on('*', async (state) => {
