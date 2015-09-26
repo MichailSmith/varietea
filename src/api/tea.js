@@ -23,5 +23,23 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+router.get('', async (req, res, next) => {
+
+  try{
+
+    const tea = teaList;
+
+    if(!tea){
+      res.status(404).send(`No tea found.`);
+      return;
+    }
+
+    res.status(200).send(tea);
+  }
+  catch (error){
+    next(error);
+  }
+});
+
 
 export default router;

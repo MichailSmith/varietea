@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './Tea.css';
 import withStyles from '../../decorators/withStyles';
 
 @withStyles(styles)
 class Tea{
+
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    preparation: PropTypes.object
+  };
 
   render(){
     return (
