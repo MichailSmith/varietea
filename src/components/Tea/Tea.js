@@ -7,16 +7,16 @@ class Tea{
 
   render(){
     return (
-      <div className="well">
-        <div className="row">
-          <span className="col-xs-12">{this.props.name}</span>
-        </div>
-        <div className="row">
-          <div className="col-xs-4">
+      <div className="Tea">
+        <span className="Tea-Header">
+          {this.props.name}
+        </span>
+        <div className="Tea-Content">
+          <div>
             <label>Temperature: </label>
             <span>{this.props.preparation.temperature.min}°C - {this.props.preparation.temperature.max}°C </span>
           </div>
-          <div className="col-xs-4">
+          <div>
             <label>First Steep: </label>
             <span>{this.props.preparation.steepTimes.first} seconds</span>
           </div>
