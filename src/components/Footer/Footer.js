@@ -10,18 +10,7 @@ import Link from '../Link';
 @withStyles(styles)
 class Footer {
 
-  static propTypes = {
-    viewport: PropTypes.shape({
-      width: PropTypes.number.isRequired,
-      height: PropTypes.number.isRequired
-    }).isRequired
-  };
-
   render() {
-    // This is just an example how one can render CSS
-    let { width, height } = this.props.viewport;
-    this.renderCss(`.Footer-viewport:after {content:' ${width}x${height}';}`);
-
     return (
       <div className="Footer">
         <div className="Footer-container">
@@ -29,7 +18,7 @@ class Footer {
           <span className="Footer-spacer">·</span>
           <a className="Footer-link" href="/" onClick={Link.handleClick}>Home</a>
           <span className="Footer-spacer">·</span>
-          <span ref="viewport" className="Footer-viewport Footer-text Footer-text--muted">Viewport:</span>
+          <span className="Footer-text">Icons made by <a className="Footer-link" href="http://www.freepik.com" title="Freepik">Freepik</a> from <a className="Footer-link" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a className="Footer-link" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></span>
         </div>
       </div>
     );

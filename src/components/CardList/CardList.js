@@ -8,11 +8,14 @@ class CardList{
   render(){
     let results = this.props.results;
     let renderResult = this.props.renderResult;
-    return(
-      <div className="CardList">
-        {results.map(renderResult)}
-      </div>
-    )
+    if(results.map){
+      return(
+        <div className="CardList">
+          {results.map(renderResult)}
+        </div>
+      )
+    }
+    return(<span>No results found</span>)
   }
 }
 

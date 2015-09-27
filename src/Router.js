@@ -10,6 +10,7 @@ import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import Tea from './components/Tea';
 import TeaCardList from './components/TeaCardList';
+import TeaServerActions from './actions/TeaServerActions';
 
 const router = new Router(on => {
 
@@ -26,7 +27,10 @@ const router = new Router(on => {
   });
   on('/tea', async () =>{
     const data = await http.get(`/api/tea/`);
-    return data && <TeaCardList {...{results:data}} />;
+
+    TeaServerActions.receiveAll(data);
+
+    return data && <TeaCardList />;
   });
 
   on('*', async (state) => {

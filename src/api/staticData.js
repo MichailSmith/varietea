@@ -20,7 +20,7 @@ export default [{
         max: 50 },
       steepTimes: {
         first: { seconds: 90 },
-        second: { seconds: 0 }
+        second: { seconds: 30 }
       }
     }
   }]
