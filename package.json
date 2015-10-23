@@ -68,11 +68,11 @@
     "csslint": "csscomb src/components --lint --verbose",
     "csscomb": "csscomb src/components --verbose",
     "test": "eslint src && jest",
-    "clean": "babel-node --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
-    "copy": "babel-node --eval \"require('./tools/copy')().catch(err => console.log(err.stack))\"",
-    "bundle": "babel-node --eval \"require('./tools/bundle')().catch(err => console.log(err.stack))\"",
-    "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
-    "serve": "babel-node --eval \"require('./tools/serve')().catch(err => console.log(err.stack))\"",
+    "clean": "node ./node_modules/babel/bin/babel-node.js --eval \"require('./tools/clean')().catch(err => console.log(err.stack))\"",
+    "copy": "node ./node_modules/babel/bin/babel-node.js --eval \"require('./tools/copy')().catch(err => console.log(err.stack))\"",
+    "bundle": "node ./node_modules/babel/bin/babel-node.js --eval \"require('./tools/bundle')().catch(err => console.log(err.stack))\"",
+    "build": "node ./node_modules/babel/bin/babel-node.js --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
+    "serve": "node ./node_modules/babel/bin/babel-node.js --eval \"require('./tools/serve')().catch(err => console.log(err.stack))\"",
     "start": "node ./node_modules/babel/bin/babel-node.js --eval \"require('./tools/start')().catch(err => console.log(err.stack))\""
   }
 }
