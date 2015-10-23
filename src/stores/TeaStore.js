@@ -37,12 +37,12 @@ var store = new TeaStore();
 
 store.dispatchToken =  teaListDispatcher.register(action=>{
   switch (action.type){
-    case ActionTypes.RECEIVE_TEAS:
-      _setTeas(action.teas);
-      store.emitChange();
-      break;
-    default:
-      //NO-OP
+  case ActionTypes.RECEIVE_TEAS:
+    _setTeas(action.teas);
+    store.emitChange();
+    break;
+  default:
+    //NO-OP
   }
 });
 
