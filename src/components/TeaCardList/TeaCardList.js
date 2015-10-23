@@ -22,6 +22,10 @@ class TeaCardList extends Component{
     TeaStore.removeChangeListener(this._onChange);
   }
 
+  _onChange(){
+    this.setState(getStateFromStores());
+  }
+
   render(){
     let data = {
       results: this.state.teas,
@@ -30,10 +34,6 @@ class TeaCardList extends Component{
       }
     };
     return <CardList {...data} />;
-  }
-
-  _onChange(){
-    this.setState(getStateFromStores());
   }
 }
 
