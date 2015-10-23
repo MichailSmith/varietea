@@ -24,3 +24,32 @@
   font-weight: 300;
   border-radius: 0 0 2px 2px;
 }
+
+.Tea-Link {
+  display: inline-block;
+  padding: 3px 8px;
+  text-decoration: none;
+}
+
+.Tea-Link,
+.Tea-Link:active,
+.Tea-Link:visited {
+  color: #272727;
+}
+
+.Tea-Link:hover {
+  color: #272727;
+}
+
+.Tea-Link--highlight {
+  margin-right: 8px;
+  margin-left: 8px;
+  border-radius: 3px;
+  background: #272727;
+  color: #fff;
+}
+
+.Tea-Link--highlight:hover {
+  background: #272727;
+}
+

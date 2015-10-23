@@ -21,11 +21,11 @@ const router = new Router(on => {
 
   on('/contact', async () => <ContactPage />);
 
-  on('/tea/:id', async (req) =>{
+  on('/:id', async (req) =>{
     const data = await http.get(`/api/tea/${req.params.id}`);
     return data && <Tea {...data} />;
   });
-  on('/tea', async () =>{
+  on('/', async () =>{
     const data = await http.get(`/api/tea/`);
 
     TeaServerActions.receiveAll(data);

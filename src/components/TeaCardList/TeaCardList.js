@@ -11,11 +11,7 @@ function getStateFromStores(){
 class TeaCardList extends Component{
   constructor(){
     super();
-    this.state = this.getInitialState();
-  }
-
-  getInitialState(){
-    return getStateFromStores();
+    this.state = getStateFromStores();
   }
 
   componentDidMount(){
