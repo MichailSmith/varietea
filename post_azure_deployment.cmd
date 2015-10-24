@@ -1,3 +1,3 @@
 echo "running npm build"
 
-npm build
+npm run-script build
