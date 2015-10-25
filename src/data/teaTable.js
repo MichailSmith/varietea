@@ -1,6 +1,8 @@
 import azureStorage from 'azure-storage';
 import nconf from 'nconf';
 
+import teaList from '../api/staticData.js'
+
 nconf.env()
   .file({ file: 'config.json', search: true });
 
@@ -17,8 +19,8 @@ tableService.createTableIfNotExists('tea',
 
 const upsertTea = (tea)=>{
   const upsertTask = Object.assign({
-    PartitionKey:partitionKey,
-    RowKey: tea.name},
+    PartitionKey:{'_':partitionKey},
+    RowKey: {'_':tea.name}},
     tea);
   return new Promise(function(resolve, reject){
     tableService.insertOrMergeEntity('tea',upsertTask,
@@ -34,8 +36,7 @@ const upsertTea = (tea)=>{
 
 const getAllTeas = (continuationToken) => {
   return new Promise(function(resolve, reject){
-    const query = new azureStorage.TableQuery()
-      .where('PartitionKey eq ?', partitionKey);
+    const query = new azureStorage.TableQuery();
     tableService.queryEntities('tea', query, continuationToken || null,
       (error, result, response)=>{
         if(!error){
