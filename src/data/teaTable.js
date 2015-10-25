@@ -18,10 +18,11 @@ tableService.createTableIfNotExists('tea',
   });
 
 const upsertTea = (tea)=>{
-  const upsertTask = Object.assign({
+  let upsertTask = {
     PartitionKey:{'_':partitionKey},
-    RowKey: {'_':tea.name}},
-    tea);
+    RowKey: {'_':tea.name},
+    tea: {'_': JSON.stringify(tea)}
+  };
   return new Promise(function(resolve, reject){
     tableService.insertOrMergeEntity('tea',upsertTask,
       (error, result, response)=>{
@@ -40,6 +41,9 @@ const getAllTeas = (continuationToken) => {
     tableService.queryEntities('tea', query, continuationToken || null,
       (error, result, response)=>{
         if(!error){
+          result.entries = result.entries.map((entry)=>{
+            return JSON.parse(entry.tea._);
+          });
           resolve(result);
         }
         reject(error);

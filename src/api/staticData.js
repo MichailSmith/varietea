@@ -1,5 +1,4 @@
 export default [{
-  id: 1,
   name: 'Sencha',
   preparation: {
     amount: {
@@ -17,7 +16,6 @@ export default [{
   }
 },
 {
-  id: 2,
   name: 'Gyokuro',
   preparation: {
     amount: {

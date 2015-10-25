@@ -28,9 +28,8 @@ router.get('', async (req, res, next) => {
 
   try{
 
-    const tea = await teaTable.getAllTeas().entities;
-
-    res.status(200).send(tea);
+    const tea = await teaTable.getAllTeas();
+    res.status(200).send(tea.entries);
   }
   catch (error){
     next(error);
