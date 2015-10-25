@@ -30,11 +30,6 @@ router.get('', async (req, res, next) => {
 
     const tea = await teaTable.getAllTeas().entities;
 
-    if(!tea){
-      res.status(404).send(`No tea found.`);
-      return;
-    }
-
     res.status(200).send(tea);
   }
   catch (error){

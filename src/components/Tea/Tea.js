@@ -4,7 +4,7 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
 @withStyles(styles)
-class Tea{
+class Tea extends React.Component{
 
   static propTypes = {
     name: PropTypes.string.isRequired,
