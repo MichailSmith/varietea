@@ -1,19 +1,18 @@
 
 import { Router } from 'express';
-import teaList from './staticData.js';
 import teaTable from '../data/teaTable.js';
 
 const router = new Router();
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:teaName', async (req, res, next) => {
 
   try{
-    const id = req.params.id;
+    const teaName = req.params.teaName;
 
-    const tea = teaList.filter(tea => tea.id == id)[0];
+    const tea = await teaTable.getTea(teaName);
 
     if(!tea){
-      res.status(404).send(`No tea with id '${id}' found.`);
+      res.status(404).send(`No tea with name '${teaName}' found.`);
       return;
     }
 
