@@ -1,6 +1,7 @@
 
 import { Router } from 'express';
-import teaList from './staticData.js'
+import teaList from './staticData.js';
+import teaTable from '../data/teaTable.js';
 
 const router = new Router();
 
@@ -27,7 +28,7 @@ router.get('', async (req, res, next) => {
 
   try{
 
-    const tea = teaList;
+    const tea = await teaTable.getAllTeas().entities;
 
     if(!tea){
       res.status(404).send(`No tea found.`);

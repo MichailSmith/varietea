@@ -6,10 +6,13 @@ let _teas = {};
 const CHANGE_EVENT = 'change';
 
 function _setTeas(teas){
-  _teas = {};
-  teas.forEach(tea=>{
-    _teas[tea.name] = tea;
-  });
+  _teas = null;
+  if(teas && teas.forEach){
+    _teas = {};
+    teas.forEach(tea=>{
+      _teas[tea.name] = tea;
+    });
+  }
 }
 
 class TeaStore extends EventEmitter{
@@ -26,6 +29,9 @@ class TeaStore extends EventEmitter{
   }
 
   getAll(){
+    if(!_teas){
+      return _teas;
+    }
     return Object.keys(_teas).map(key=>_teas[key]);
   }
 
