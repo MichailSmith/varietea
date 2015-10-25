@@ -20,7 +20,7 @@ class Tea extends React.Component{
       <div className="Tea">
         <span className="Tea-Header">
 
-          <a className="Tea-Link" href={'/' + this.props.id} onClick={Link.handleClick}>{this.props.name}</a>
+          <a className="Tea-Link" href={'/' + this.props.name} onClick={Link.handleClick}>{this.props.name}</a>
         </span>
         <div className="Tea-Content">
           <div>

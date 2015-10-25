@@ -21,8 +21,8 @@ const router = new Router(on => {
 
   on('/contact', async () => <ContactPage />);
 
-  on('/:id', async (req) =>{
-    const data = await http.get(`/api/tea/${req.params.id}`);
+  on('/:teaName', async (req) =>{
+    const data = await http.get(`/api/tea/${req.params.teaName}`);
     return data && <Tea {...data} />;
   });
   on('/', async () =>{

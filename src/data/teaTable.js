@@ -57,7 +57,7 @@ const getTea = (teaName) => {
     tableService.retrieveEntity(tableName, partitionKey, teaName,
       (error, result, response)=>{
         if(!error){
-          resolve(JSON.parse(entry.tea._));
+          resolve(JSON.parse(result.tea._));
         } else {
           reject(error);
         }
