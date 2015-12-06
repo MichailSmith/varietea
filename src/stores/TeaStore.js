@@ -1,5 +1,5 @@
 import {EventEmitter} from 'events';
-import teaListDispatcher from '../dispatchers/teaListDispatcher';
+import teaListDispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
 
 let _teas = {};

@@ -1,4 +1,4 @@
-import teaListDispatcher from '../dispatchers/teaListDispatcher';
+import teaListDispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
 
 export default {

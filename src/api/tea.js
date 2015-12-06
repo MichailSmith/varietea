@@ -1,8 +1,14 @@
-
 import { Router } from 'express';
 import teaTable from '../data/teaTable.js';
 
+import authenticator from './user.js';
+
 const router = new Router();
+
+router.use(async (req, res, next) => {
+  console.log(req);
+  next();
+});
 
 router.get('/:teaName', async (req, res, next) => {
 
@@ -35,5 +41,13 @@ router.get('', async (req, res, next) => {
   }
 });
 
+router.put('', async (req, res, next) => {
+  try{
+    
+  }
+  catch (error){
+    next(error);
+  }
+});
 
 export default router;
