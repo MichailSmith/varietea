@@ -26,6 +26,30 @@ const HttpClient = {
           resolve(res.body);
         }
       });
+  }),
+  put: (path, data) => new Promise((resolve,reject) =>{
+    request
+      .put(path)
+      .send(data)
+      .end((err, res)=>{
+        if(err){
+          reject(err);
+        } else {
+          resolve(res.body);
+        }
+      });
+  }),
+  post: (path, data) => new Promise((resolve,reject) =>{
+    request
+      .post(path)
+      .send(data)
+      .end((err, res)=>{
+        if(err){
+          reject(err);
+        } else {
+          resolve(res.body);
+        }
+      });
   })
 
 };

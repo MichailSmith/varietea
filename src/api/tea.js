@@ -41,9 +41,20 @@ router.get('', async (req, res, next) => {
   }
 });
 
-router.put('', async (req, res, next) => {
+router.put('/:teaName', async (req, res, next) => {
   try{
-    
+    const teaName = req.params.teaName;
+    teaTable.upsertTea(req.body.tea);
+  }
+  catch (error){
+    next(error);
+  }
+});
+
+router.post('/:teaName', async (req, res, next) => {
+  try{
+    const teaName = req.params.teaName;
+    teaTable.upsertTea(req.body.tea);
   }
   catch (error){
     next(error);

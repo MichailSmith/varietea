@@ -25,18 +25,18 @@ let stormpathApplicationLoadedPromise = stormpathLoadedPromise
         }
       })
     });
-});
+  });
 
 export default {
   createUser: async (account) => {
     const application = await stormpathApplicationLoadedPromise;
     return new Promise(function(resolve, reject) {
       application.createUser(account, (err, account)=>{
-          if(err){
-            reject(err);
-          } else {
-            resolve(account);
-          }
+        if(err){
+          reject(err);
+        } else {
+          resolve(account);
+        }
       });
     });
   },
