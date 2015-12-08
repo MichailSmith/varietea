@@ -1,5 +1,6 @@
 import teaListDispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
+import http from '../core/HttpClient';
 
 export default {
   receiveAll: teas =>{
@@ -17,10 +18,12 @@ export default {
     });
   },
 
-  saveTea: teaName => {
-    teaListDispatcher.dispatch({
-      type: ActionTypes.SAVE_TEA,
-      teaName: teaName
-    })
+  saveTea: async (teaName, teaData) => {
+    try {
+      const saveResult = await http.put(`api/tea/${teaName}`, {tea: teaData});
+      updateTea(saveResult);
+    } catch (e) {
+      console.log(e);
+    }
   }
 };

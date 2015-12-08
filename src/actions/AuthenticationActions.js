@@ -1,6 +1,7 @@
 import teaListDispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
-import http from '../core/HttpClient'
+import http from '../core/HttpClient';
+
 export default {
   updateUserName: username =>{
     teaListDispatcher.dispatch({
