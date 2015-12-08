@@ -9,6 +9,7 @@ import ContactPage from './components/ContactPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import Tea from './components/Tea';
+import TeaEdit from './components/TeaEdit';
 import TeaCardList from './components/TeaCardList';
 import TeaServerActions from './actions/TeaServerActions';
 
@@ -23,7 +24,7 @@ const router = new Router(on => {
 
   on('/:teaName', async (req) =>{
     const data = await http.get(`/api/tea/${req.params.teaName}`);
-    return data && <Tea {...data} />;
+    return data && <TeaEdit {...data} />;
   });
   on('/', async () =>{
     const data = await http.get(`/api/tea/`);

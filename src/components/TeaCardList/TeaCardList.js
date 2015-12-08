@@ -14,18 +14,6 @@ class TeaCardList extends Component{
     this.state = getStateFromStores();
   }
 
-  componentDidMount(){
-    TeaStore.addChangeListener(this._onChange);
-  }
-
-  componentWillUnmount(){
-    TeaStore.removeChangeListener(this._onChange);
-  }
-
-  _onChange(){
-    this.setState(getStateFromStores());
-  }
-
   render(){
     let data = {
       results: this.state.teas,
