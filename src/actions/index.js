@@ -44,3 +44,10 @@ export const selectTea = (teaName) => {
     teaName
   };
 };
+
+export const setTeas = (teas) =>{
+  return {
+    type: 'SET_TEAS',
+    teas
+  };
+};
