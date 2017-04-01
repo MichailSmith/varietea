@@ -1,15 +1,28 @@
 import React from 'react';
 
-const timer = ({secondsRemaining, isRunning}) =>{
+const timer = ({secondsRemaining, isRunning, style}) =>{
+  const color = isRunning? 'green':'red';
+  const defaultStyle = {
+    color: color,
+    fontSize: '30px',
+    border: `3px solid ${color}`,
+    padding: '15px',
+    display: 'inline-block',
+    textAlign: 'center',
+    fontWeight: 100
+  };
   return (
-    <span style={{
-      color: isRunning? 'green':'red',
-      fontSize: '24px',
-      border: '1px solid black',
-      padding: '5px'
+    <div style={{
+      ...defaultStyle,
+      ...style
     }}>
-    {secondsRemaining}s
-  </span>
+      <span >
+      {secondsRemaining.toFixed(0)}
+      </span>
+      <div style={{
+        fontSize: '16px'
+      }}>Seconds</div>
+    </div>
   );
 };
 

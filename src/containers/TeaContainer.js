@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
-import { startTimer, updateTimer } from '../actions';
+import { startTimer, pauseTimer, resetTimer } from '../actions';
 import { Tea } from '../components';
 
 const mapStateToProps = (state) => {
@@ -14,6 +14,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onStartClick: ()=> {
       dispatch(startTimer());
+    },
+    onPauseClick: ()=>{
+      dispatch(pauseTimer());
+    },
+    onResetClick: ()=> {
+      dispatch(resetTimer());
     }
   };
 };

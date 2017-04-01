@@ -24,7 +24,8 @@ const timer = (state = {}, action) =>{
     return {
       ...state,
       timerRunning: false,
-      timeRemaining: state.tea.timeRemaining
+      steepCount: 1,
+      timeRemaining: state.tea.time_seconds * 1000
     };
 
     case 'PAUSE_TIMER':
