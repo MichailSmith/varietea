@@ -1,0 +1,38 @@
+{
+  "name": "infinitea",
+  "version": "1.0.0",
+  "description": "Custom tea timers and steeping instructions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node react-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichailSmith/varietea.git"
+  },
+  "author": "Michail Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichailSmith/varietea/issues"
+  },
+  "homepage": "https://github.com/MichailSmith/varietea#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.6.0",
+    "redux-devtools": "^3.3.2",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

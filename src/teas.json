@@ -1,0 +1,9 @@
+{
+  "Gyokuro": {
+    "time_seconds": 30,
+    "temperature_C": 50,
+    "amount_g": 5,
+    "additional_time_per_steep": 15,
+    "max_steeps": 5
+  }
+}
