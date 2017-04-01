@@ -12,5 +12,12 @@
     "amount_g": 5,
     "additional_time_per_steep": -10,
     "max_steeps": 5
+  },
+  "Hojicha":{
+    "time_seconds": 30,
+    "temperature_C": 100,
+    "amount_g": 5,
+    "additional_time_per_steep": -20,
+    "max_steeps": 5
   }
 }

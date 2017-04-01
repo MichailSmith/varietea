@@ -8,9 +8,11 @@ const Tea = ({ tea, onStartClick, onPauseClick, onResetClick }) => {
       <br/>
       It can be steeped up to {tea.max_steeps} times, adding {tea.additional_time_per_steep}s per steep.
       <TimerContainer />
-      <button onClick={onStartClick}>Start</button>
-      <button onClick={onPauseClick}>Pause</button>
-      <button onClick={onResetClick}>Reset</button>
+      <div>
+        <button onClick={onStartClick}>Start</button>
+        <button onClick={onPauseClick}>Pause</button>
+        <button onClick={onResetClick}>Reset</button>
+      </div>
     </div>
   )
 };
