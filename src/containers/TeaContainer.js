@@ -1,19 +1,21 @@
+import { connect } from 'react-redux';
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { startTimer, updateTimer } from '../actions';
+import { Tea } from '../components';
 
-export default class TeaContainer extends Component{
-  render(){
-    const { tea } = this.context.store.getState().timer;
-    return(
-      <div>
-        {tea.name} should be steeped for {tea.time_seconds}s at {tea.temperature_C}°C.
-        <br/>
-        It can be steeped up to {tea.max_steeps} times, adding {tea.additional_time_per_steep}s per steep.
-      </div>
-    )
-  }
+const mapStateToProps = (state) => {
+  const { tea } = state.timer;
+  return{
+    tea
+  };
 };
 
-TeaContainer.contextTypes = {
-  store: React.PropTypes.object
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onStartClick: ()=> {
+      dispatch(startTimer());
+    }
+  };
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tea);

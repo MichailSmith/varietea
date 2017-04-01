@@ -1,14 +1,14 @@
 export const startTimer = () => {
   return {
     type: 'START_TIMER',
-    startTime: Date().getTime()
+    startTime: new Date().getTime()
   };
 };
 
 export const updateTimer = () => {
   return {
     type: 'UPDATE_TIMER',
-    time: Date().getTime()
+    time: new Date().getTime()
   };
 };
 

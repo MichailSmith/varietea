@@ -5,5 +5,12 @@
     "amount_g": 5,
     "additional_time_per_steep": 15,
     "max_steeps": 5
+  },
+  "Sencha" : {
+    "time_seconds": 30,
+    "temperature_C": 75,
+    "amount_g": 5,
+    "additional_time_per_steep": -10,
+    "max_steeps": 5
   }
 }

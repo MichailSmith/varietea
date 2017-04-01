@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { TeaList } from '../components';
 
-export default class TeaListContainer extends Component{
-  render(){
-    const { teas } = this.context.store.getState().timer;
-
-    return(
-      <div>
-        { Object.keys(teas).map((tea)=><Link key={tea} to={`/tea/${tea}`}>{tea}</Link>) }
-      </div>
-    )
-  }
+const mapStateToProps = (state) =>{
+  return {
+    teas: state.timer.teas
+  };
 };
 
-TeaListContainer.contextTypes = {
-  store: React.PropTypes.object
-};
+export default connect(mapStateToProps)(TeaList);

@@ -8,7 +8,7 @@ const timer = (state = {}, action) =>{
     };
 
     case 'UPDATE_TIMER':
-    if(timerUpdatedTime > action.time || !state.timerRunning){
+    if(state.timerUpdatedTime > action.time || !state.timerRunning){
       return state;
     }
     const timeElapsed = action.time - state.timerUpdatedTime;
