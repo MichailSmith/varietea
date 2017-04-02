@@ -3,8 +3,8 @@ import React from 'react';
 const TimerButton = ({onClick, style, hidden, children}) =>{
   const defaultStyle ={
     backgroundColor: '#F5F19D',
-    padding: '15px 30px 15px 30px',
-    borderRadius: '5px',
+    padding: '30px 55px 30px 55px',
+    borderRadius: '10px',
     display: 'inline-block',
     textAlign: 'center',
     color: '#666666',

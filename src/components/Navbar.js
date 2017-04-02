@@ -16,6 +16,7 @@ const Navbar = ()=>{
     <div style={{
       width: '100%',
       textAlign: 'center',
+      fontSize: '20px',
       backgroundColor: '#8DDDA0'
     }}>
       <div style={innerStyle}>Recent Teas</div>
