@@ -7,7 +7,7 @@ import infiniteaReducers from './reducers';
 import { TeaListContainer, TeaContainer } from './containers';
 import { selectTea, setTeas } from './actions';
 import teas from './teas.json';
-import { InfiniteaHeader } from './components';
+import { InfiniteaHeader, Navbar } from './components';
 
 let store = createStore(infiniteaReducers);
 store.dispatch(setTeas(teas));
@@ -19,6 +19,7 @@ export default class App extends Component {
         <Provider store={store}>
           <div style={{fontFamily: 'Scope One, Serif'}}>
             <InfiniteaHeader/>
+            <Navbar/>
             <Switch>
               <Route exact path="/tea" component={TeaListContainer} />
               <Route path="/tea/:tea" render={({match})=>{

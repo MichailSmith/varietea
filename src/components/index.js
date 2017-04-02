@@ -7,3 +7,4 @@ export SteepCountSelector from './SteepCountSelector';
 export InfiniteaHeader from './InfiniteaHeader';
 export SteepInstructions from './SteepInstructions';
 export TimerButton from './TimerButton';
+export Navbar from './Navbar';

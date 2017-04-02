@@ -5,7 +5,7 @@ import { SteepCountSelector, SteepInstructions, TimerButton } from './';
 const Tea = ({ tea, onStartClick, onPauseClick, onResetClick, timerRunning, steepCount, onChangeSteepCount }) => {
   return(
     <div style={{textAlign: 'center', color:'#666666'}}>
-      <h3><img src="/dist/Leaf.png"/>{tea.name}</h3>
+      <h3 style={{fontSize: '30px'}}><img src="/dist/Leaf.png"/>{tea.name}</h3>
       <div><TimerContainer /></div>
       <div style={{padding:'10px'}}>
         <span> Steep </span>
