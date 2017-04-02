@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { TimerFormat } from './';
 const timer = ({secondsRemaining, isRunning, style}) =>{
   const defaultStyle = {
     color: 'black',
@@ -17,12 +17,7 @@ const timer = ({secondsRemaining, isRunning, style}) =>{
       ...defaultStyle,
       ...style
     }}>
-      <span >
-      {secondsRemaining.toFixed(0)}
-      </span>
-      <div style={{
-        fontSize: '16px'
-      }}>Seconds</div>
+      <TimerFormat secondsRemaining={secondsRemaining}/>
     </div>
   );
 };
