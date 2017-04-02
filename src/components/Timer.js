@@ -3,8 +3,8 @@ import { TimerFormat } from './';
 const timer = ({secondsRemaining, isRunning, style}) =>{
   const defaultStyle = {
     color: 'black',
-    fontSize: '30px',
-    padding: '15px',
+    fontSize: '50px',
+    padding: '20px 50px 20px 50px',
     display: 'inline-block',
     textAlign: 'center',
     fontWeight: 100,

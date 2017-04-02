@@ -5,3 +5,5 @@ export TeaItem from './TeaItem';
 export TeaList from './TeaList';
 export SteepCountSelector from './SteepCountSelector';
 export InfiniteaHeader from './InfiniteaHeader';
+export SteepInstructions from './SteepInstructions';
+export TimerButton from './TimerButton';

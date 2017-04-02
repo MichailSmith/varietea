@@ -30,7 +30,7 @@ class TimerContainer extends Component{
     const { timeRemaining, timerRunning } = this.props;
 
     return(
-        <Timer secondsRemaining={timeRemaining/1000} isRunning={timerRunning}/>
+        <Timer secondsRemaining={Math.ceil(timeRemaining/1000)} isRunning={timerRunning}/>
     )
   }
 };

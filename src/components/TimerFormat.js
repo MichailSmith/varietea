@@ -8,7 +8,7 @@ const timerFormat = ({ secondsRemaining }) =>{
   const seconds = padTime(Math.floor(secondsRemaining % 60));
   const minutes = padTime(Math.floor(secondsRemaining / 60));
   return(
-    <span style={{fontSize:'30px'}}>
+    <span>
       {`${minutes}:${seconds}`}
     </span>
   )

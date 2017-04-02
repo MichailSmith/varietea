@@ -1,6 +1,6 @@
 import React from 'react';
 import { TimerContainer } from '../containers';
-import { SteepCountSelector } from './';
+import { SteepCountSelector, SteepInstructions, TimerButton } from './';
 
 const Tea = ({ tea, onStartClick, onPauseClick, onResetClick, timerRunning, steepCount, onChangeSteepCount }) => {
   return(
@@ -8,7 +8,7 @@ const Tea = ({ tea, onStartClick, onPauseClick, onResetClick, timerRunning, stee
       <h3><img src="/dist/Leaf.png"/>{tea.name}</h3>
       <div><TimerContainer /></div>
       <div style={{padding:'10px'}}>
-        Steeps:
+        <span> Steep </span>
         <SteepCountSelector
           max_steeps={tea.max_steeps}
           steepCount={steepCount}
@@ -16,13 +16,15 @@ const Tea = ({ tea, onStartClick, onPauseClick, onResetClick, timerRunning, stee
           onChangeSteepCount={onChangeSteepCount}
         />
       </div>
-      <div style={{padding: '10px', color: '#393939'}}>
-        {`The recommended steep is ${tea.amount_g}g at ${tea.temperature_C}C/${tea.temperature_F}F`}
-      </div>
+      <SteepInstructions tea={tea}/>
       <div>
-        <button hidden={timerRunning} onClick={onStartClick}>Start</button>
-        <button hidden={!timerRunning} onClick={onPauseClick}>Pause</button>
-        <button onClick={onResetClick}>Reset</button>
+        <TimerButton hidden={timerRunning} onClick={onStartClick}
+          style = {{backgroundColor: '#8DDDA0'}}>
+          Start
+        </TimerButton>
+
+        <TimerButton hidden={!timerRunning} onClick={onPauseClick}>Pause</TimerButton>
+        <TimerButton onClick={onResetClick}>Reset</TimerButton>
       </div>
     </div>
   )

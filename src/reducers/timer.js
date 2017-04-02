@@ -1,10 +1,27 @@
+const timerAudio = new Audio('/dist/TimerFinished.mp3');
+
+const getSteepTime = (tea, steepCount)=> {
+  const timeRemaining =
+    (tea.time_seconds +
+    (steepCount - 1) *
+    tea.additional_time_per_steep) * 1000;
+
+  return timeRemaining > tea.minimum_time_seconds?
+    timeRemaining:
+    tea.minimum_time_seconds * 1000;
+};
+
 const timer = (state = {}, action) =>{
   switch(action.type) {
     case 'START_TIMER':
     return {
       ...state,
       timerUpdatedTime: action.startTime,
-      timerRunning:true
+      timerRunning:true,
+      timeRemaining:
+        state.timeRemaining > 0?
+        state.timeRemaining:
+        getSteepTime(state.tea, state.steepCount)
     };
 
     case 'UPDATE_TIMER':
@@ -13,6 +30,9 @@ const timer = (state = {}, action) =>{
     }
     const timeElapsed = action.time - state.timerUpdatedTime;
     const newTimeRemaining = state.timeRemaining - timeElapsed;
+    if(newTimeRemaining <= 0 && state.timerRunning){
+      timerAudio.play();
+    }
     return {
       ...state,
       timerUpdatedTime: action.time,
@@ -42,15 +62,10 @@ const timer = (state = {}, action) =>{
     };
 
     case 'UPDATE_STEEPS':
-    const timeRemaining =
-      (state.tea.time_seconds +
-      (action.steepCount - 1) *
-      state.tea.additional_time_per_steep) * 1000;
+
     return {
       ...state,
-      timeRemaining: timeRemaining > state.tea.minimum_time_seconds?
-        timeRemaining:
-        state.tea.minimum_time_seconds * 1000,
+      timeRemaining: getSteepTime(state.tea, action.steepCount),
       steepCount: action.steepCount,
       timerRunning: false
     };
@@ -71,7 +86,7 @@ const timer = (state = {}, action) =>{
           name: action.teaName,
           temperature_F: selectedTea.temperature_C * 9.0/5.0 + 32.0
         },
-        timeRemaining: selectedTea.time_seconds * 1000,
+        timeRemaining: getSteepTime(selectedTea, 1),
         timerRunning: false,
         steepCount: 1
       }
