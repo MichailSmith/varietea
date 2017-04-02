@@ -3,7 +3,11 @@ import { TeaItem } from './';
 
 const TeaList = ({ teas }) => {
   return(
-    <div>
+    <div style={{
+        textDecoration: 'none',
+        color: '#70B180',
+        textAlign: 'center'
+    }}>
       {Object.keys(teas).map((tea)=><TeaItem key={tea} tea={tea} />)}
     </div>
   )

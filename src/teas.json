@@ -1,26 +1,74 @@
 {
   "Gyokuro": {
-    "time_seconds": 30,
-    "temperature_C": 50,
+    "time_seconds": 105,
+    "temperature_C": 60,
     "amount_g": 5,
-    "additional_time_per_steep": 15,
-    "minimum_time_seconds": 0,
+    "additional_time_per_steep": -75,
+    "minimum_time_seconds": 15,
     "max_steeps": 5
   },
   "Sencha" : {
-    "time_seconds": 30,
-    "temperature_C": 75,
-    "amount_g": 5,
-    "additional_time_per_steep": -10,
-    "minimum_time_seconds": 10,
+    "time_seconds": 60,
+    "temperature_C": 70,
+    "amount_g": 2,
+    "additional_time_per_steep": -40,
+    "minimum_time_seconds": 20,
     "max_steeps": 5
   },
-  "Hojicha":{
+  "Houjicha": {
     "time_seconds": 30,
     "temperature_C": 100,
-    "amount_g": 5,
+    "amount_g": 3,
     "additional_time_per_steep": -20,
     "minimum_time_seconds": 10,
     "max_steeps": 5
+  },
+  "Chinese Black": {
+    "time_seconds": 20,
+    "temperature_C": 98,
+    "amount_g": 4,
+    "additional_time_per_steep": 10,
+    "minimum_time_seconds": 0,
+    "max_steeps": 10
+  },
+  "Pu'er": {
+    "time_seconds": 30,
+    "temperature_C": 96,
+    "amount_g": 5,
+    "additional_time_per_steep": 23,
+    "minimum_time_seconds": 0,
+    "max_steeps": 10
+  },
+  "Chinese Green": {
+    "time_seconds": 20,
+    "temperature_C": 80,
+    "amount_g": 5,
+    "additional_time_per_steep": 10,
+    "minimum_time_seconds": 0,
+    "max_steeps": 10
+  },
+  "Dragonwell": {
+    "time_seconds": 20,
+    "temperature_C": 80,
+    "amount_g": 4,
+    "additional_time_per_steep": 10,
+    "minimum_time_seconds": 0,
+    "max_steeps": 10
+  },
+  "Oolong": {
+    "time_seconds": 30,
+    "temperature_C": 100,
+    "amount_g": 5,
+    "additional_time_per_steep": 23,
+    "minimum_time_seconds": 0,
+    "max_steeps": 10
+  },
+  "White": {
+    "time_seconds": 25,
+    "temperature_C": 96,
+    "amount_g": 5,
+    "additional_time_per_steep": 10,
+    "minimum_time_seconds": 0,
+    "max_steeps": 10
   }
 }
