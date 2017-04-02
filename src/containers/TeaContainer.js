@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
-import { startTimer, pauseTimer, resetTimer } from '../actions';
+import { startTimer, pauseTimer, resetTimer, updateSteeps } from '../actions';
 import { Tea } from '../components';
 
 const mapStateToProps = (state) => {
-  const { tea } = state.timer;
+  const { tea, timerRunning, steepCount } = state.timer;
   return{
-    tea
+    tea,
+    timerRunning,
+    steepCount
   };
 };
 
@@ -20,6 +22,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onResetClick: ()=> {
       dispatch(resetTimer());
+    },
+    onChangeSteepCount: (steepCount)=>{
+      dispatch(updateSteeps(steepCount))
     }
   };
 };

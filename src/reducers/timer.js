@@ -42,12 +42,15 @@ const timer = (state = {}, action) =>{
     };
 
     case 'UPDATE_STEEPS':
+    const timeRemaining =
+      (state.tea.time_seconds +
+      (action.steepCount - 1) *
+      state.tea.additional_time_per_steep) * 1000;
     return {
       ...state,
-      timeRemaining:
-        (state.tea.time_seconds +
-        (action.steepCount - 1) *
-        state.tea.additional_time_per_steep) * 1000,
+      timeRemaining: timeRemaining > state.tea.minimum_time_seconds?
+        timeRemaining:
+        state.tea.minimum_time_seconds * 1000,
       steepCount: action.steepCount,
       timerRunning: false
     };
@@ -68,7 +71,8 @@ const timer = (state = {}, action) =>{
           name: action.teaName
         },
         timeRemaining: selectedTea.time_seconds * 1000,
-        timerRunning: false
+        timerRunning: false,
+        steepCount: 1
       }
     } else {
       return {

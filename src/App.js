@@ -7,6 +7,7 @@ import infiniteaReducers from './reducers';
 import { TeaListContainer, TeaContainer } from './containers';
 import { selectTea, setTeas } from './actions';
 import teas from './teas.json';
+import { InfiniteaHeader } from './components';
 
 let store = createStore(infiniteaReducers);
 store.dispatch(setTeas(teas));
@@ -16,13 +17,16 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <Switch>
-            <Route exact path="/tea" component={TeaListContainer} />
-            <Route path="/tea/:tea" render={({match})=>{
-              store.dispatch(selectTea(match.params.tea));
-              return (<TeaContainer tea={match.params.tea}/>)}} />
-            <Route render={()=> <Redirect to="/tea" />}/>
-          </Switch>
+          <div>
+            <InfiniteaHeader/>
+            <Switch>
+              <Route exact path="/tea" component={TeaListContainer} />
+              <Route path="/tea/:tea" render={({match})=>{
+                store.dispatch(selectTea(match.params.tea));
+                return (<TeaContainer tea={match.params.tea}/>)}} />
+              <Route render={()=> <Redirect to="/tea" />}/>
+            </Switch>
+          </div>
         </Provider>
       </BrowserRouter>
     );

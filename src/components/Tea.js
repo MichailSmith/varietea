@@ -1,16 +1,21 @@
 import React from 'react';
 import { TimerContainer } from '../containers';
+import { SteepCountSelector } from './';
 
-const Tea = ({ tea, onStartClick, onPauseClick, onResetClick }) => {
+const Tea = ({ tea, onStartClick, onPauseClick, onResetClick, timerRunning, steepCount, onChangeSteepCount }) => {
   return(
     <div>
-      {tea.name} should be steeped for {tea.time_seconds}s at {tea.temperature_C}°C.
-      <br/>
-      It can be steeped up to {tea.max_steeps} times, adding {tea.additional_time_per_steep}s per steep.
+      <h2>{tea.name}</h2> 
       <TimerContainer />
+      <SteepCountSelector
+        max_steeps={tea.max_steeps}
+        steepCount={steepCount}
+        timerRunning={timerRunning}
+        onChangeSteepCount={onChangeSteepCount}
+      />
       <div>
-        <button onClick={onStartClick}>Start</button>
-        <button onClick={onPauseClick}>Pause</button>
+        <button hidden={timerRunning} onClick={onStartClick}>Start</button>
+        <button hidden={!timerRunning} onClick={onPauseClick}>Pause</button>
         <button onClick={onResetClick}>Reset</button>
       </div>
     </div>

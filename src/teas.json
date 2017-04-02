@@ -4,6 +4,7 @@
     "temperature_C": 50,
     "amount_g": 5,
     "additional_time_per_steep": 15,
+    "minimum_time_seconds": 0,
     "max_steeps": 5
   },
   "Sencha" : {
@@ -11,6 +12,7 @@
     "temperature_C": 75,
     "amount_g": 5,
     "additional_time_per_steep": -10,
+    "minimum_time_seconds": 10,
     "max_steeps": 5
   },
   "Hojicha":{
@@ -18,6 +20,7 @@
     "temperature_C": 100,
     "amount_g": 5,
     "additional_time_per_steep": -20,
+    "minimum_time_seconds": 10,
     "max_steeps": 5
   }
 }
