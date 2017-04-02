@@ -1,15 +1,16 @@
 import React from 'react';
 
 const timer = ({secondsRemaining, isRunning, style}) =>{
-  const color = isRunning? 'green':'red';
   const defaultStyle = {
-    color: color,
+    color: 'black',
     fontSize: '30px',
-    border: `3px solid ${color}`,
     padding: '15px',
     display: 'inline-block',
     textAlign: 'center',
-    fontWeight: 100
+    fontWeight: 100,
+    backgroundColor: '#F5F19D',
+    color: '#393939',
+    borderRadius: '5px'
   };
   return (
     <div style={{

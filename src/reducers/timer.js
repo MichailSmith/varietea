@@ -68,7 +68,8 @@ const timer = (state = {}, action) =>{
         ...state,
         tea: {
           ...selectedTea,
-          name: action.teaName
+          name: action.teaName,
+          temperature_F: selectedTea.temperature_C * 9.0/5.0 + 32.0
         },
         timeRemaining: selectedTea.time_seconds * 1000,
         timerRunning: false,

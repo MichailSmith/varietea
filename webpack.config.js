@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
@@ -17,5 +18,8 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+  ]
 }

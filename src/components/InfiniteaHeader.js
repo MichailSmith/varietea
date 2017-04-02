@@ -18,8 +18,6 @@ export default ()=>{
           <img src="/dist/Logo.png"/>Infinitea
         </Link>
       </h1>
-      <span
-        ></span>
     </div>
   )
 }
