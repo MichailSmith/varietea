@@ -17,7 +17,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <div>
+          <div style={{fontFamily: 'Scope One, Serif'}}>
             <InfiniteaHeader/>
             <Switch>
               <Route exact path="/tea" component={TeaListContainer} />
